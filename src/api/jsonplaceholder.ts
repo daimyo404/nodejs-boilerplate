@@ -23,6 +23,11 @@ type Users = {
 };
 
 export const fetchUsers = async (): Promise<Users> => {
-  const users = await fetch('https://jsonplaceholder.typicode.com/users');
-  return users.json();
+  const result = await fetch('https://jsonplaceholder.typicode.com/users');
+
+  if (!result.ok) {
+    throw new Error('Error fetching users');
+  }
+
+  return result.json();
 };

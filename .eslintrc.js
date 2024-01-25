@@ -4,7 +4,7 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   overrides: [
     {
       env: {
@@ -27,10 +27,8 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   plugins: ['@typescript-eslint'],
-  rules: {
-    'no-unused-vars': {
-      argsIgnorePattern: '^_',
-      varsIgnorePattern: '^_',
-    },
+  rule: {
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
   },
 };
