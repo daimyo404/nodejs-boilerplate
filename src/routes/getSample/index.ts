@@ -3,5 +3,5 @@ import { fetchUsers } from '../../api/jsonplaceholder';
 
 export const getSample = async (_req: Request, res: Response) => {
   const users = await fetchUsers();
-  return res.json(users);
+  return res.status(200).json(users);
 };
